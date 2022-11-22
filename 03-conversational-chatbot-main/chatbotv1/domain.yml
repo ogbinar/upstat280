@@ -1,0 +1,64 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - place_order_intent
+  - items_description
+
+entities:
+  - quantity
+  - food_item
+
+slots:
+  quantity:
+    type: text
+    influence_conversation: false
+  food_item:
+    type: text
+    influence_conversation: false
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: "Kamusta"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+  - text: "Me too!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_get_order:
+  - text: "Sure. May I take your order, please?"
+  - text: "Definitely, What would you like to have today?"
+  - text: "Certainly, I’ll try to help you with that. What are you feeling like eating today?"
+
+  utter_confirm_order:
+  - text: "Done. You ordered {quantity} {food_item}"
+
+  utter_please_rephrase:
+  - text: "I'm sorry, I didn't quite understand that. Can you please rephrase?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+ 
